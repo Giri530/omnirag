@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnirag"
+version = "1.0.0"
+description = "Universal RAG System combining Liquid + Agentic + Chain RAG"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Girinath V", email = "girinathv48@gmail.com"}
+]
+keywords = ["rag", "llm", "ai", "machine-learning", "nlp", "pdf", "qwen"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "transformers>=4.30.0",
+    "torch>=2.0.0",
+    "sentence-transformers>=2.2.0",
+    "faiss-cpu>=1.7.4",
+    "numpy>=1.24.0",
+    "accelerate>=0.20.0",
+    "PyPDF2>=3.0.0",
+    "duckduckgo-search>=3.9.0",
+    "requests>=2.31.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Giri530/omnirag"
+Documentation = "https://github.com/Giri530/omnirag/README.md"
+Repository = "https://github.com/Giri530/omnirag"
