@@ -36,7 +36,7 @@ rag.load_from_file("dataset.pdf")  # Supports PDF, TXT, JSON, CSV
 result = rag.query("Your question here")
 print(result['answer'])
 ```
-
+'''
 ## Features
 
 ✅ **Smart User Detection** - Automatically detects expertise level
@@ -47,7 +47,7 @@ print(result['answer'])
 ✅ **Query Decomposition** - Handles complex questions
 ✅ **Fast Caching** - 3x speedup on repeated queries
 ✅ **100% FREE** - No API costs!
-
+'''
 ## Supported Models
 
 ```python
