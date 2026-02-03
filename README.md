@@ -428,7 +428,7 @@ If you find OmniRAG useful, please ⭐ star the repo!
 ```bibtex
 @software{omnirag2025,
   title={OmniRAG: The Universal RAG System},
-  author={Your Name},
+  author={Girinath V},
   year={2025},
   url={https://github.com/Giri530/omnirag}
 }
