@@ -1,13 +1,13 @@
 import os
 import json
-from liquid_analyzer import LiquidAnalyzer
-from chain_decomposer import ChainDecomposer
-from agentic_planner import AgenticPlanner
-from content_transformer import ContentTransformer
-from vectordb_tool import VectorDBTool
-from web_search_tool import WebSearchTool
-from llm_client import LLMClient
-from cache import SimpleCache
+from omnirag.liquid_analyzer import LiquidAnalyzer
+from omnirag.chain_decomposer import ChainDecomposer
+from omnirag.agentic_planner import AgenticPlanner
+from omnirag.content_transformer import ContentTransformer
+from omnirag.vectordb_tool import VectorDBTool
+from omnirag.web_search_tool import WebSearchTool
+from omnirag.llm_client import LLMClient
+from omnirag.cache import SimpleCache
 class OmniRAG:
     def __init__(self,
                  model_name="Qwen/Qwen2.5-0.5B-Instruct",
