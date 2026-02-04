@@ -413,7 +413,7 @@ See [LICENSE](LICENSE) for details.
 ## 📧 Contact
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/Giri530/omnirag/issues)
-- **Email**: your@email.com
+- **Gmail**: girinathv48@gmail.com
 
 ---
 
