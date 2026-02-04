@@ -218,8 +218,6 @@ FOR EACH SUB-QUERY:
 ✨ Perfect Answer!
 ```
 
-See [Architecture Diagram](docs/architecture.drawio) for detailed visualization.
-
 ---
 
 ## 📊 Performance
