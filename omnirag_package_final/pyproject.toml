@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnirag"
-version = "1.0.0"
+version = "1.0.4"
 description = "Universal RAG System combining Liquid + Agentic + Chain RAG"
 readme = "README.md"
 requires-python = ">=3.8"
