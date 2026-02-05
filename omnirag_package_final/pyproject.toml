@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnirag"
-version = "1.0.4"
+version = "1.0.5"
 description = "Universal RAG System combining Liquid + Agentic + Chain RAG"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -29,7 +29,7 @@ dependencies = [
     "numpy>=1.24.0",
     "accelerate>=0.20.0",
     "PyPDF2>=3.0.0",
-    "duckduckgo-search>=3.9.0",
+    "ddgs>=0.3.0",
     "requests>=2.31.0",
 ]
 
