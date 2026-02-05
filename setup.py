@@ -33,7 +33,7 @@ setup(
         "numpy>=1.24.0",
         "accelerate>=0.20.0",
         "PyPDF2>=3.0.0",
-        "duckduckgo-search>=3.9.0",
+        "ddgs>=0.3.0",
         "requests>=2.31.0",
     ],
     keywords="rag llm ai faiss huggingface qwen machine-learning nlp pdf",
