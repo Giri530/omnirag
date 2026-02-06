@@ -2,6 +2,7 @@ class WebSearchTool:
     def __init__(self):
         self.enabled = True
     def search(self, query, max_results=3):
+        try:
             try:
                 from ddgs import DDGS
             except ImportError:
@@ -14,7 +15,7 @@ class WebSearchTool:
                         results.append(body)
             print(f"DuckDuckGo: Found {len(results)} results")
             return results
-        except ImportError:
+        except ImportError: 
             print("DuckDuckGo package not installed!")
             print("Install with: pip install ddgs")
             return []
