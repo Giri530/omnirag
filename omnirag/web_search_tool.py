@@ -16,7 +16,7 @@ class WebSearchTool:
             return results
         except ImportError:
             print("DuckDuckGo package not installed!")
-            print(" Install with: pip install ddgs")
+            print("Install with: pip install ddgs")
             return []
         except Exception as e:
             print(f" DuckDuckGo search error: {e}")
