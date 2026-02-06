@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="omnirag",
-    version="1.0.8",
+    version="1.0.9",
     author="Girinath V",
     author_email="girinathv48@gmail.com",
     description="OmniRAG: Universal RAG System combining Liquid + Agentic + Chain RAG",
