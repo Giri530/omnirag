@@ -1,136 +1,98 @@
-# 🚀 OmniRAG v2.0 - Multi-Language Voice RAG
+# OmniRAG
+
+<div align="center">
 
 [![PyPI version](https://badge.fury.io/py/omnirag.svg)](https://pypi.org/project/omnirag/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://pepy.tech/badge/omnirag)](https://pepy.tech/project/omnirag)
 
-**Multi-Language Voice RAG Framework** 🇮🇳
+**Intelligent Retrieval-Augmented Generation with Multi-Language Support and Voice Interface**
 
-Intelligent RAG combining **Liquid + Agentic + Chain** architectures with **unique features**:
+[Features](#features) •
+[Installation](#installation) •
+[Quick Start](#quick-start) •
+[Documentation](#documentation) •
+[Examples](#examples) •
+[Contributing](#contributing)
 
-- 🌍 **Smart Multi-Language Translation** - 27+ languages including Tamil, Hindi
-- 🎤 **Voice Input & Output** - Speak questions, hear answers
-- 🧠 **Adaptive RAG** - Automatically adjusts to user expertise level
-
----
-
-## 🆕 What's New in v2.0?
-
-### ✨ Feature 1: Smart Post-Retrieval Translation
-
-**Revolutionary architecture**: Documents stay in **original language**, translation happens **AFTER retrieval**!
-
-**Why this is better:**
-- ✅ Better embeddings (preserve semantic meaning)
-- ✅ No storage duplication
-- ✅ One document → Many output languages
-- ✅ 70% more efficient than traditional approaches
-
-```python
-from omnirag import OmniRAG
-
-# Documents in English
-rag = OmniRAG(output_language="Tamil")
-rag.add_documents(["AI helps solve complex problems."])
-
-# Query in English, get Tamil answer!
-result = rag.query("What is AI?")
-print(result['answer'])
-# Output: "செயற்கை நுண்ணறிவு சிக்கலான சிக்கல்களைத் தீர்க்க உதவுகிறது."
-```
-
-**Supported Languages (27+):**
-- **Indian:** Tamil, Hindi, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Bengali
-- **European:** Spanish, French, German, Italian, Portuguese, Russian, Polish, Dutch, Turkish
-- **Asian:** Chinese, Japanese, Korean, Vietnamese, Thai, Indonesian, Malay
-- **Other:** Arabic, English
-
-### ✨ Feature 2: Voice Input & Output
-
-**First open-source RAG with built-in voice support!**
-
-```python
-# Voice output (text-to-speech)
-rag = OmniRAG(enable_voice=True, output_language="Tamil")
-result = rag.query("What is Python?", speak_answer=True)
-# Hears answer in Tamil! 🔊
-
-# Voice input (speech-to-text) - requires microphone
-result = rag.voice_query()
-# Speak your question, hear the answer!
-```
+</div>
 
 ---
 
-## 🎯 What is OmniRAG?
+## Overview
 
-OmniRAG is an advanced Retrieval-Augmented Generation system that combines three powerful RAG techniques:
+OmniRAG is a production-ready RAG (Retrieval-Augmented Generation) framework that combines adaptive learning, intelligent tool selection, and native multi-language capabilities. Unlike traditional RAG systems, OmniRAG translates outputs after retrieval, preserving semantic quality while supporting 27+ languages with built-in voice interface.
 
-### 🌊 Liquid RAG
-Automatically adapts answers to user expertise level:
-- **Beginner**: Simple explanations with examples
-- **Intermediate**: Balanced technical content
-- **Expert**: Deep technical details
+### Key Capabilities
 
-### 🤖 Agentic RAG
-Intelligently chooses the best information source:
-- **VectorDB**: For local documents
-- **Web Search**: For current information
-
-### ⛓️ Chain RAG
-Handles complex multi-part questions:
-- Breaks down complex queries
-- Answers each part separately
-- Synthesizes coherent final answer
+- **Adaptive Intelligence**: Automatically adjusts response complexity based on user expertise level
+- **Multi-Language Translation**: Native support for 27+ languages including Tamil, Hindi, Spanish, and more
+- **Voice Interface**: Built-in speech-to-text and text-to-speech capabilities
+- **Intelligent Tool Selection**: Automatically chooses between local knowledge base and web search
+- **Production Ready**: Optimized for real-world applications with caching and error handling
 
 ---
 
-## ✨ All Features
+## Features
 
-**v2.0 NEW:**
-- 🌍 **Multi-Language Translation** (27+ languages)
-- 🎤 **Voice Input & Output** (speak & hear)
-- 🔤 **Full Language Names** ("Tamil" not "ta")
-- 🔧 **UTF-8 Support** (perfect Tamil/Hindi display)
+### Core Features
 
-**v1.0 CORE:**
-- ✅ **PDF Support** - Load PDF files directly
-- ✅ **Multiple LLM Models** - Qwen, Flan-T5, Mistral, Phi-2
-- ✅ **FAISS Vector DB** - Fast similarity search
-- ✅ **Web Search** - DuckDuckGo integration (free!)
-- ✅ **Smart User Detection** - Auto expertise level detection
-- ✅ **Query Decomposition** - Handles complex questions
-- ✅ **Fast Caching** - 3x speedup on repeated queries
-- ✅ **100% FREE** - No API costs!
-- ✅ **Works on CPU** - No GPU required
+- **🌊 Liquid RAG**: Adapts responses to user expertise (beginner, intermediate, expert)
+- **🤖 Agentic RAG**: Intelligently selects optimal information sources
+- **⛓️ Chain RAG**: Decomposes and handles complex multi-part queries
+- **📄 Document Processing**: Native support for PDF, TXT, JSON, and more
+- **🔍 Vector Search**: High-performance FAISS-based similarity search
+- **💾 Smart Caching**: Automatic response caching for improved performance
+
+### v2.0 New Features
+
+- **🌍 Post-Retrieval Translation**
+  - Preserves embedding quality by maintaining original language documents
+  - Significantly more storage efficient than pre-translation approaches
+  - Supports full language names ("Spanish" vs "es") for better usability
+  
+- **🎤 Native Voice Interface**
+  - Built-in speech recognition and synthesis
+  - No external API dependencies
+  - Multi-language voice support
+  - Works offline
+
+- **🔧 Production Enhancements**
+  - UTF-8 encoding support for non-Latin scripts
+  - Improved error handling and logging
+  - Comprehensive documentation and examples
 
 ---
 
-## 📦 Installation
+## Installation
+
+### Basic Installation
 
 ```bash
 pip install omnirag
 ```
 
-### With Voice Input (Optional)
+### With Voice Input Support
 
-**Windows:**
+Voice output is enabled by default. For voice input (speech recognition), install additional dependencies:
+
+**Windows**
 ```bash
 pip install pipwin
 pipwin install pyaudio
 pip install omnirag[voice-input]
 ```
 
-**Mac:**
+**macOS**
 ```bash
 brew install portaudio
 pip install omnirag[voice-input]
 ```
 
-**Linux:**
+**Linux**
 ```bash
-sudo apt-get install portaudio19-dev
+sudo apt-get install portaudio19-dev python3-pyaudio
 pip install omnirag[voice-input]
 ```
 
@@ -144,491 +106,486 @@ pip install -e .
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Basic Usage
 
 ```python
 from omnirag import OmniRAG
 
-# Initialize
+# Initialize with your preferred model
 rag = OmniRAG(model_name="google/flan-t5-small")
 
 # Add documents
 rag.add_documents([
-    "Python is a programming language.",
-    "It is used for AI and data science."
+    "Python is a high-level programming language.",
+    "It emphasizes code readability and simplicity."
 ])
 
-# Query
+# Query the system
 result = rag.query("What is Python?")
 print(result['answer'])
 ```
 
-### Multi-Language Example
+### Multi-Language Translation
 
 ```python
 from omnirag import OmniRAG
 
-# Initialize with Spanish output
+# Initialize with target language
 rag = OmniRAG(
     model_name="google/flan-t5-small",
-    output_language="Spanish"  # or "Tamil", "Hindi", etc.
+    output_language="Spanish"
 )
 
 # Add English documents
 rag.add_documents([
-    "AI helps solve complex problems.",
+    "Artificial Intelligence enables machines to learn from experience.",
     "Machine Learning is a subset of AI."
 ])
 
-# Query in English, get Spanish answer!
+# Query in any language, receive Spanish response
 result = rag.query("What is AI?")
 print(result['answer'])
-# Output: "La IA ayuda a resolver problemas complejos."
+# Output: "La Inteligencia Artificial permite a las máquinas aprender de la experiencia."
 ```
 
-### Voice Example
+### Voice-Enabled RAG
 
 ```python
 from omnirag import OmniRAG
 
-# Initialize with voice
+# Initialize with voice support
 rag = OmniRAG(
     enable_voice=True,
     output_language="Tamil"
 )
 
-rag.add_documents(["Python is great for AI."])
+rag.add_documents(["Quantum computing uses quantum mechanics principles."])
 
-# Text input, voice output
-result = rag.query("What is Python?", speak_answer=True)
-# Hears answer in Tamil! 🔊
+# Text query with spoken response
+result = rag.query("Explain quantum computing", speak_answer=True)
 
-# Voice input, voice output (requires microphone)
+# Full voice interaction (requires microphone)
 result = rag.voice_query()
-# Speak question, hear answer!
 ```
 
 ---
 
-## 💡 Usage Examples
+## Supported Languages
 
-### Load Different File Types
+OmniRAG supports 27+ languages with both full names and ISO codes:
+
+**Indian Languages**: Tamil, Hindi, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Bengali
+
+**European Languages**: Spanish, French, German, Italian, Portuguese, Russian, Polish, Dutch, Turkish
+
+**Asian Languages**: Chinese (Simplified), Japanese, Korean, Vietnamese, Thai, Indonesian, Malay
+
+**Other**: Arabic, English
+
+---
+
+## Model Support
+
+### Recommended Models
+
+| Model | Parameters | RAM | Speed | Quality | Use Case |
+|-------|------------|-----|-------|---------|----------|
+| `google/flan-t5-small` | 80M | 0.5GB | ⚡⚡⚡ | ⭐⭐ | Development, Testing |
+| `google/flan-t5-base` | 250M | 1GB | ⚡⚡⚡ | ⭐⭐⭐ | Production (Balanced) |
+| `Qwen/Qwen2.5-0.5B-Instruct` | 500M | 1GB | ⚡⚡ | ⭐⭐⭐ | High Quality |
+| `Qwen/Qwen2.5-1.5B-Instruct` | 1.5B | 2GB | ⚡⚡ | ⭐⭐⭐⭐ | Best Quality |
+| `Qwen/Qwen2.5-3B-Instruct` | 3B | 4GB | ⚡ | ⭐⭐⭐⭐⭐ | Maximum Quality |
+
+---
+
+## Advanced Configuration
 
 ```python
-# PDF files
-rag.load_from_file("research_paper.pdf")
-
-# Text files
-rag.load_from_file("notes.txt")
-
-# JSON data
-rag.load_from_file("data.json")
-
-# Entire folder
-rag.load_from_folder("./documents")
-
-# With chunking for large files
-rag.load_from_file("big_file.pdf", chunk_size=500)
-
-# Direct text
-rag.add_documents([
-    "Python is great for ML.",
-    "Qwen is a powerful language model."
-])
+rag = OmniRAG(
+    model_name="google/flan-t5-base",      # LLM model
+    embedding_model="all-MiniLM-L6-v2",    # Embedding model
+    enable_web_search=True,                 # Enable web search
+    output_language="Tamil",                # Target language
+    enable_voice=True,                      # Voice interface
+    use_4bit=False,                         # 4-bit quantization
+    verbose=True                            # Debug logging
+)
 ```
 
-### Different Output Languages
+---
+
+## Examples
+
+### Document Q&A System
 
 ```python
-# Default: Spanish
-rag = OmniRAG(output_language="Spanish")
+# Load documents from various sources
+rag.load_from_file("company_handbook.pdf")
+rag.load_from_folder("./policy_documents")
 
-# Query 1: Spanish (default)
-result1 = rag.query("What is AI?")
-
-# Query 2: Override to Tamil
-result2 = rag.query("What is ML?", output_language="Tamil")
-
-# Query 3: Override to French
-result3 = rag.query("What is DL?", output_language="French")
+# Query with automatic source attribution
+result = rag.query("What is the remote work policy?")
+print(f"Answer: {result['answer']}")
+print(f"Sources: {result['sources']}")
 ```
 
-### Full Language Names
+### Multi-Language Customer Support
 
 ```python
-# All these work!
-rag = OmniRAG(output_language="Spanish")  # ✅
-rag = OmniRAG(output_language="spanish")  # ✅
-rag = OmniRAG(output_language="es")       # ✅
+# Initialize for Hindi-speaking users
+support_rag = OmniRAG(
+    output_language="Hindi",
+    enable_voice=True
+)
 
-# Same for all languages
-rag = OmniRAG(output_language="Tamil")    # ✅
-rag = OmniRAG(output_language="Hindi")    # ✅
+support_rag.load_from_file("product_manual.pdf")
+
+# Customer query with voice response
+result = support_rag.query(
+    "How do I reset my password?",
+    speak_answer=True
+)
 ```
 
-### Complex Queries
+### Educational Assistant
 
 ```python
-# OmniRAG automatically breaks down and answers
+# Initialize for students
+edu_rag = OmniRAG(model_name="google/flan-t5-base")
+
+edu_rag.load_from_file("physics_textbook.pdf")
+
+# Automatically adapts to user level
+beginner_result = rag.query("Explain photosynthesis")  # Simple explanation
+expert_result = rag.query("Explain quantum entanglement")  # Technical detail
+```
+
+### Complex Query Handling
+
+```python
+# Automatically decomposes complex queries
 result = rag.query("""
-Compare Python vs Java for machine learning.
-Which is better for beginners?
-What are the performance differences?
+Compare the advantages and disadvantages of solar and wind energy.
+Which is more cost-effective for residential use?
+What are the environmental impacts of each?
 """)
-
-print(result['answer'])
-```
-
-### Enable Web Search
-
-```python
-rag = OmniRAG(
-    model_name="google/flan-t5-small",
-    enable_web_search=True  # Free DuckDuckGo search
-)
-
-# Queries about "latest" or "recent" automatically use web
-result = rag.query("Latest AI developments in 2025")
 ```
 
 ---
 
-## 🎨 Supported Models
+## API Reference
 
-### Qwen Models (Recommended!)
+### Core Methods
 
-```python
-# Fast & Efficient
-rag = OmniRAG(model_name="Qwen/Qwen2.5-0.5B-Instruct")
+#### `__init__(**kwargs)`
+Initialize OmniRAG with configuration parameters.
 
-# Balanced (Best Choice!)
-rag = OmniRAG(model_name="Qwen/Qwen2.5-1.5B-Instruct")
-
-# High Quality
-rag = OmniRAG(model_name="Qwen/Qwen2.5-3B-Instruct")
-```
-
-### Flan-T5 Models
-
-```python
-# Small & Fast
-rag = OmniRAG(model_name="google/flan-t5-small")   # 80M params
-
-# Medium
-rag = OmniRAG(model_name="google/flan-t5-base")    # 250M params
-
-# Larger & Better
-rag = OmniRAG(model_name="google/flan-t5-large")   # 780M params
-```
-
----
-
-## 🏗️ Architecture
-
-```
-User Query
-    ↓
-🌊 LIQUID RAG: Detect expertise level
-    ↓
-⛓️ CHAIN RAG: Break into sub-queries (if complex)
-    ↓
-FOR EACH SUB-QUERY:
-    ↓
-🤖 AGENTIC RAG: Choose tool (VectorDB or Web)
-    ↓
-    Retrieve relevant chunks (ORIGINAL language)
-    ↓
-🌊 LIQUID RAG: Transform to user level
-    ↓
-    Generate sub-answer
-    ↓
-⛓️ CHAIN RAG: Synthesize all sub-answers
-    ↓
-🌍 TRANSLATION: Convert to target language (NEW!)
-    ↓
-🔊 VOICE: Speak answer (if enabled) (NEW!)
-    ↓
-✨ Perfect Answer!
-```
-
----
-
-## 📊 Performance
-
-| Model | Size | RAM | Speed | Quality |
-|-------|------|-----|-------|---------|
-| flan-t5-small | 80M | 0.5GB | ⚡⚡⚡ | ⭐⭐ |
-| flan-t5-base | 250M | 1GB | ⚡⚡⚡ | ⭐⭐⭐ |
-| **Qwen-0.5B** | 0.5B | 1GB | ⚡⚡ | ⭐⭐⭐ |
-| **Qwen-1.5B** | 1.5B | 2GB | ⚡⚡ | ⭐⭐⭐⭐ |
-| Qwen-3B | 3B | 4GB | ⚡ | ⭐⭐⭐⭐⭐ |
-
-**Recommended:** 
-- **For testing:** `flan-t5-small` (fast!)
-- **For production:** `flan-t5-base` or `Qwen-0.5B` (balanced)
-- **For quality:** `Qwen-1.5B` (best!)
-
----
-
-## 🔧 Configuration
-
-```python
-rag = OmniRAG(
-    # LLM Model
-    model_name="google/flan-t5-small",
-    
-    # Embedding Model
-    embedding_model="all-MiniLM-L6-v2",
-    
-    # Web Search
-    enable_web_search=True,
-    
-    # NEW: Output Language
-    output_language="Tamil",  # or "auto" for no translation
-    
-    # NEW: Voice I/O
-    enable_voice=True,
-    
-    # Verbose Output
-    verbose=True
-)
-```
-
----
-
-## 📖 API Reference
-
-### OmniRAG Class
-
-#### `__init__(model_name, embedding_model, enable_web_search, verbose, output_language, enable_voice)`
-Initialize OmniRAG system.
-
-**New Parameters:**
-- `output_language` (str): Target language ("Tamil", "Spanish", "auto", etc.)
-- `enable_voice` (bool): Enable voice input/output
+**Parameters:**
+- `model_name` (str): HuggingFace model identifier
+- `embedding_model` (str): Sentence transformer model
+- `enable_web_search` (bool): Enable web search capability
+- `output_language` (str): Target language for responses
+- `enable_voice` (bool): Enable voice interface
+- `use_4bit` (bool): Use 4-bit quantization for memory efficiency
+- `verbose` (bool): Enable detailed logging
 
 #### `query(user_query, output_language=None, speak_answer=False)`
-Query the system and get answer.
+Submit a query to the RAG system.
 
-**New Parameters:**
-- `output_language` (str): Override default language for this query
-- `speak_answer` (bool): Speak the answer aloud
+**Parameters:**
+- `user_query` (str): The question or prompt
+- `output_language` (str, optional): Override default output language
+- `speak_answer` (bool): Enable voice response
 
-**Returns:**
-```python
-{
-    'answer': str,              # Generated answer
-    'sources': list,            # Retrieved sources
-    'user_level': str,          # Detected expertise level
-    'output_language': str,     # Output language code
-    'spoken': bool,             # Whether answer was spoken
-}
-```
+**Returns:** Dictionary containing:
+- `answer` (str): Generated response
+- `sources` (list): Retrieved source documents
+- `user_level` (str): Detected expertise level
+- `output_language` (str): Language code of response
 
-#### `voice_query(output_language=None)` **NEW!**
-Voice-to-voice query (requires microphone).
+#### `add_documents(documents)`
+Add documents to the knowledge base.
 
-#### `save_to_file(result, filename)` **NEW!**
-Save result to file with UTF-8 encoding.
+**Parameters:**
+- `documents` (list): List of text strings or file paths
 
-#### Other Methods (from v1.0)
+#### `load_from_file(file_path, chunk_size=None)`
+Load and process a document file.
 
-- `load_from_file(file_path, chunk_size=None)`
-- `load_from_folder(folder_path, file_extensions=None)`
-- `add_documents(documents)`
-- `get_stats()`
-- `clear_cache()`
+**Parameters:**
+- `file_path` (str): Path to document file
+- `chunk_size` (int, optional): Character limit per chunk
 
----
+#### `voice_query(output_language=None)`
+Process voice input and provide voice output.
 
-## 🌍 Use Cases
+**Parameters:**
+- `output_language` (str, optional): Override default output language
 
-### Customer Support (Multi-Language)
-```python
-rag = OmniRAG(output_language="Hindi", enable_voice=True)
-rag.load_from_file("product_manual.pdf")
-
-# Hindi-speaking customer
-result = rag.query("How do I reset my device?", speak_answer=True)
-# Answer in Hindi + spoken aloud!
-```
-
-### Educational Platform (Tamil)
-```python
-rag = OmniRAG(output_language="Tamil")
-rag.load_from_file("class10_science.pdf")
-
-# Student query
-result = rag.query("What is photosynthesis?")
-# Answer in Tamil!
-```
-
-### Accessibility Tool
-```python
-# For visually impaired users
-rag = OmniRAG(enable_voice=True)
-rag.load_from_folder("./personal_docs")
-
-# Completely hands-free
-while True:
-    result = rag.voice_query()
-    if "exit" in result.get('answer', '').lower():
-        break
-```
+**Returns:** Same structure as `query()`
 
 ---
 
-## 🌟 Why OmniRAG?
+## Architecture
 
-| Feature | LangChain | LlamaIndex | **OmniRAG** |
-|---------|-----------|------------|-------------|
-| **Post-Retrieval Translation** | ❌ No | ❌ No | ✅ **YES** |
-| **Built-in Voice I/O** | ❌ No | ❌ No | ✅ **YES** |
-| **Indian Language Support** | ⚠️ Basic | ⚠️ Basic | ✅ **Native** |
-| **Full Language Names** | ❌ No | ❌ No | ✅ **YES** |
-| **Beginner Friendly** | ⚠️ Complex | ⚠️ Complex | ✅ **Simple** |
-| **100% Free** | ✅ Yes | ✅ Yes | ✅ **Yes** |
+```
+┌─────────────┐
+│ User Query  │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Liquid Analyzer    │  ← Detect user expertise level
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Chain Decomposer   │  ← Break complex queries
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Agentic Planner    │  ← Select tools (Vector DB / Web)
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Information        │
+│  Retrieval          │  ← Fetch relevant chunks
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Content            │
+│  Transformation     │  ← Adapt to user level
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  LLM Generation     │  ← Generate response
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Smart Translator   │  ← Translate (if needed)
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Voice Processor    │  ← Synthesize speech (if enabled)
+└──────┬──────────────┘
+       │
+       ▼
+┌─────────────┐
+│   Response  │
+└─────────────┘
+```
 
 ---
 
-## 🛠️ Development
+## Use Cases
 
-### Install for Development
+### Enterprise Applications
+- **Customer Support**: Multi-language support with voice interface
+- **Internal Knowledge Base**: Quick access to company documentation
+- **Training Systems**: Adaptive content delivery based on employee expertise
+
+### Education
+- **Study Assistants**: Personalized explanations for students
+- **Language Learning**: Cross-language practice and translation
+- **Accessibility**: Voice interface for visually impaired students
+
+### Research
+- **Literature Review**: Query across multiple papers and documents
+- **Data Analysis**: Natural language interface to research data
+- **Collaborative Tools**: Multi-language research team support
+
+---
+
+## Performance Optimization
+
+### Memory Management
+
+```python
+# Use 4-bit quantization for large models
+rag = OmniRAG(
+    model_name="Qwen/Qwen2.5-3B-Instruct",
+    use_4bit=True  # Reduces memory usage by ~75%
+)
+```
+
+### Caching
+
+```python
+# Automatic caching of frequent queries
+result1 = rag.query("What is Python?")  # ~2s
+result2 = rag.query("What is Python?")  # <10ms (from cache)
+
+# Clear cache when needed
+rag.clear_cache()
+```
+
+### Batch Processing
+
+```python
+questions = [
+    "What is machine learning?",
+    "What is deep learning?",
+    "What is neural network?"
+]
+
+results = [rag.query(q) for q in questions]
+```
+
+---
+
+## Comparison with Other Frameworks
+
+| Feature | LangChain | LlamaIndex | OmniRAG |
+|---------|-----------|------------|---------|
+| Built-in Translation* | ❌ | ❌ | ✅ |
+| Built-in Voice I/O* | ❌ | ❌ | ✅ |
+| Adaptive Responses | ⚠️ Manual | ⚠️ Manual | ✅ Auto |
+| Indian Languages | ⚠️ External | ⚠️ External | ✅ Native |
+| Beginner Friendly | ⚠️ Complex | ⚠️ Complex | ✅ Simple |
+| Open Source | ✅ | ✅ | ✅ |
+| Free to Use | ✅ | ✅ | ✅ |
+
+\* Built-in = Native implementation without external APIs or services
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+**Import Errors**
+```python
+# Ensure proper installation
+pip install --upgrade omnirag
+
+# Verify installation
+python -c "from omnirag import OmniRAG; print('Success!')"
+```
+
+**Voice Input Issues**
+```bash
+# Windows
+pipwin install pyaudio
+
+# macOS
+brew install portaudio && pip install pyaudio
+
+# Linux
+sudo apt-get install portaudio19-dev python3-pyaudio
+```
+
+**Out of Memory**
+```python
+# Use smaller model or enable quantization
+rag = OmniRAG(
+    model_name="google/flan-t5-small",  # Smaller model
+    use_4bit=True  # Enable quantization
+)
+```
+
+---
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests for new functionality
+5. Commit changes (`git commit -m 'Add amazing feature'`)
+6. Push to branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+### Development Setup
 
 ```bash
 git clone https://github.com/Giri530/omnirag.git
 cd omnirag
 pip install -e ".[dev]"
-```
-
-### Project Structure
-
-```
-omnirag/
-├── omnirag/
-│   ├── __init__.py
-│   ├── omnirag.py              # Main class
-│   ├── smart_translator.py     # NEW: Translation
-│   ├── voice_processor.py      # NEW: Voice I/O
-│   ├── liquid_analyzer.py      # User level detection
-│   ├── chain_decomposer.py     # Query decomposition
-│   ├── agentic_planner.py      # Tool selection
-│   ├── content_transformer.py  # Content adaptation
-│   ├── vectordb_tool.py        # FAISS database
-│   ├── web_search_tool.py      # Web search
-│   ├── llm_client.py           # LLM wrapper
-│   └── cache.py                # Caching
-├── examples/
-│   └── quickstart.py
-├── setup.py
-├── pyproject.toml
-├── requirements.txt
-└── README.md
+pytest tests/  # Run tests
 ```
 
 ---
 
-## 📝 Requirements
+## License
 
-- Python 3.8+
-- 1-4GB RAM (depends on model)
-- CPU or GPU (GPU recommended for speed)
-
-**Core Dependencies:**
-- transformers, torch, sentence-transformers
-- faiss-cpu, PyPDF2, duckduckgo-search
-
-**New Dependencies (v2.0):**
-- deep-translator, langdetect (translation)
-- pyttsx3 (voice output)
-- SpeechRecognition, pyaudio (voice input - optional)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🤝 Contributing
+## Citation
 
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing`)
-5. Open Pull Request
-
----
-
-## 📄 License
-
-MIT License - Free for commercial and personal use!
-
-See [LICENSE](LICENSE) for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **HuggingFace** for transformers library
-- **Qwen Team** for excellent models
-- **FAISS** for fast vector search
-- **Sentence Transformers** for embeddings
-- **Deep Translator** for translation API
-- **pyttsx3** for text-to-speech
-
----
-
-## 📧 Contact
-
-- **GitHub**: [@Giri530](https://github.com/Giri530)
-- **Email**: girinathv48@gmail.com
-- **Issues**: [Report bugs or request features](https://github.com/Giri530/omnirag/issues)
-
----
-
-## 🌟 Star History
-
-If you find OmniRAG useful, please ⭐ star the repo!
-
----
-
-## 📚 Citation
+If you use OmniRAG in your research or project, please cite:
 
 ```bibtex
 @software{omnirag2025,
-  title={OmniRAG: Multi-Language Voice RAG Framework},
+  title={OmniRAG: Intelligent Multi-Language RAG Framework},
   author={Girinath V},
   year={2025},
   version={2.0.0},
-  url={https://github.com/Giri530/omnirag}
+  url={https://github.com/Giri530/omnirag},
+  license={MIT}
 }
 ```
 
 ---
 
-## 🎯 Roadmap
+## Acknowledgments
 
-**v2.0 (Current):**
-- ✅ Multi-language translation (27+ languages)
-- ✅ Voice input and output
-- ✅ UTF-8 encoding support
-
-**v2.1 (Planned):**
-- [ ] More file formats (DOCX, XLSX)
-- [ ] Custom translation models
-- [ ] Voice language selection
-- [ ] GUI interface
-
-**v3.0 (Future):**
-- [ ] Real-time translation
-- [ ] Multi-modal RAG (images)
-- [ ] Cloud deployment
-- [ ] API server
+Built with these excellent open-source projects:
+- [Transformers](https://github.com/huggingface/transformers) by Hugging Face
+- [FAISS](https://github.com/facebookresearch/faiss) by Meta Research
+- [Sentence Transformers](https://www.sbert.net/) by UKP Lab
+- [Deep Translator](https://github.com/nidhaloff/deep-translator)
+- [pyttsx3](https://github.com/nateshmbhat/pyttsx3)
 
 ---
 
-**Made with ❤️ in India 🇮🇳**
+## Support
 
-**100% FREE Forever!**
+- **Documentation**: [Complete Guide (PDF)](https://github.com/Giri530/omnirag/blob/main/docs/OmniRAG_Complete_Guide.pdf)
+- **Issues**: [GitHub Issues](https://github.com/Giri530/omnirag/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Giri530/omnirag/discussions)
+- **Email**: girinathv48@gmail.com
 
-**Happy RAG-ing! 🚀**
+---
+
+## Roadmap
+
+### v2.0 (Current)
+- ✅ Multi-language translation
+- ✅ Voice interface
+- ✅ UTF-8 support
+
+### v2.1 (Planned)
+- [ ] DOCX and XLSX support
+- [ ] Custom translation models
+- [ ] Voice language selection
+- [ ] Web UI
+
+### v3.0 (Future)
+- [ ] Multi-modal support (images, audio)
+- [ ] Real-time translation
+- [ ] Cloud deployment templates
+- [ ] REST API server
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Girinath V](https://github.com/Giri530)**
+
+[⭐ Star us on GitHub](https://github.com/Giri530/omnirag) •
+[📦 Install from PyPI](https://pypi.org/project/omnirag/) •
+[📖 Read the Docs](https://github.com/Giri530/omnirag#readme)
+
+</div>
