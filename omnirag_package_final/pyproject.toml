@@ -1,26 +1,47 @@
 [build-system]
 requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
 build-backend = "setuptools.build_meta"
-
 [project]
 name = "omnirag"
-version = "1.0.9"
-description = "Universal RAG System combining Liquid + Agentic + Chain RAG"
+version = "2.0.0"
+description = "India's First Multi-Language Voice RAG Framework"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
     {name = "Girinath V", email = "girinathv48@gmail.com"}
 ]
-keywords = ["rag", "llm", "ai", "machine-learning", "nlp", "pdf", "qwen"]
+keywords = [
+    "rag",
+    "retrieval-augmented-generation",
+    "llm",
+    "ai",
+    "machine-learning",
+    "nlp",
+    "multi-language",
+    "voice",
+    "tamil",
+    "hindi",
+    "translation",
+    "faiss",
+    "vector-database",
+    "qwen",
+    "huggingface"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
 ]
-
 dependencies = [
     "transformers>=4.30.0",
     "torch>=2.0.0",
@@ -31,9 +52,32 @@ dependencies = [
     "PyPDF2>=3.0.0",
     "ddgs>=0.3.0",
     "requests>=2.31.0",
+    "deep-translator>=1.11.4",
+    "langdetect>=1.0.9",
+    "pyttsx3>=2.90",
 ]
-
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "twine>=4.0.0",
+    "build>=0.10.0",
+]
+voice-input = [
+    "SpeechRecognition>=3.10.0",
+    "pyaudio>=0.2.13",
+]
 [project.urls]
 Homepage = "https://github.com/Giri530/omnirag"
-Documentation = "https://github.com/Giri530/omnirag/README.md"
+Documentation = "https://github.com/Giri530/omnirag#readme"
 Repository = "https://github.com/Giri530/omnirag"
+"Bug Tracker" = "https://github.com/Giri530/omnirag/issues"
+[tool.setuptools]
+packages = ["omnirag"]
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
