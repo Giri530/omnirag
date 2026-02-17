@@ -3,10 +3,10 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 setup(
     name="omnirag",
-    version="2.0.1",
+    version="2.0.2",
     author="Girinath V",
     author_email="girinathv48@gmail.com",
-    description="Multi-Language Voice RAG Framework",
+    description="India's First Multi-Language Voice RAG Framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Giri530/omnirag",
@@ -15,7 +15,11 @@ setup(
         "Documentation": "https://github.com/Giri530/omnirag#readme",
         "Source Code": "https://github.com/Giri530/omnirag",
     },
-    packages=find_packages(),
+    packages=["omnirag"],
+    package_data={
+        "omnirag": ["*.py"],
+    },
+    include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
