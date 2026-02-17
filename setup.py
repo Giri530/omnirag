@@ -1,21 +1,25 @@
 from setuptools import setup, find_packages
-
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
-
 setup(
     name="omnirag",
-    version="1.0.9",
+    version="2.0.0",
     author="Girinath V",
     author_email="girinathv48@gmail.com",
-    description="OmniRAG: Universal RAG System combining Liquid + Agentic + Chain RAG",
+    description="India's First Multi-Language Voice RAG Framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Giri530/omnirag",
+    project_urls={
+        "Bug Tracker": "https://github.com/Giri530/omnirag/issues",
+        "Documentation": "https://github.com/Giri530/omnirag#readme",
+        "Source Code": "https://github.com/Giri530/omnirag",
+    },
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
@@ -23,6 +27,8 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Operating System :: OS Independent",
     ],
     python_requires=">=3.8",
     install_requires=[
@@ -35,6 +41,38 @@ setup(
         "PyPDF2>=3.0.0",
         "ddgs>=0.3.0",
         "requests>=2.31.0",
+        "deep-translator>=1.11.4",
+        "langdetect>=1.0.9",
+        "pyttsx3>=2.90",
     ],
-    keywords="rag llm ai faiss huggingface qwen machine-learning nlp pdf",
+    extras_require={
+        "dev": [
+            "pytest>=7.0.0",
+            "black>=22.0.0",
+            "flake8>=4.0.0",
+            "twine>=4.0.0",
+            "build>=0.10.0",
+        ],
+        "voice-input": [
+            "SpeechRecognition>=3.10.0",
+            "pyaudio>=0.2.13",
+        ],
+    },
+    keywords=[
+        "rag",
+        "retrieval-augmented-generation",
+        "llm",
+        "ai",
+        "machine-learning",
+        "nlp",
+        "multi-language",
+        "voice",
+        "tamil",
+        "hindi",
+        "translation",
+        "faiss",
+        "vector-database",
+        "qwen",
+        "huggingface",
+    ],
 )
