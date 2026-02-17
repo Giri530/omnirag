@@ -3,7 +3,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 setup(
     name="omnirag",
-    version="2.0.0",
+    version="2.0.1",
     author="Girinath V",
     author_email="girinathv48@gmail.com",
     description="India's First Multi-Language Voice RAG Framework",
