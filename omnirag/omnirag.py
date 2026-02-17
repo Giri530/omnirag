@@ -1,13 +1,13 @@
-from llm_client import LLMClient
-from vectordb_tool import VectorDBTool
-from web_search_tool import WebSearchTool
-from liquid_analyzer import LiquidAnalyzer
-from agentic_planner import AgenticPlanner
-from chain_decomposer import ChainDecomposer
-from cache import SimpleCache
-from content_transformer import ContentTransformer
-from smart_translator import SmartTranslator
-from voice_processor import VoiceProcessor
+from omnirag.llm_client import LLMClient
+from omnirag.vectordb_tool import VectorDBTool
+from omnirag.web_search_tool import WebSearchTool
+from omnirag.liquid_analyzer import LiquidAnalyzer
+from omnirag.agentic_planner import AgenticPlanner
+from omnirag.chain_decomposer import ChainDecomposer
+from omnirag.cache import SimpleCache
+from omnirag.content_transformer import ContentTransformer
+from omnirag.smart_translator import SmartTranslator
+from omnirag.voice_processor import VoiceProcessor
 class OmniRAG:
     def __init__(
         self,
