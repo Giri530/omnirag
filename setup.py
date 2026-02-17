@@ -6,7 +6,7 @@ setup(
     version="2.0.2",
     author="Girinath V",
     author_email="girinathv48@gmail.com",
-    description="India's First Multi-Language Voice RAG Framework",
+    description="Multi-Language Voice RAG Framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Giri530/omnirag",
