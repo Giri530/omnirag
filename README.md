@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://pepy.tech/badge/omnirag)](https://pepy.tech/project/omnirag)
 
-**India's First Multi-Language Voice RAG Framework** 🇮🇳
+**Multi-Language Voice RAG Framework** 🇮🇳
 
 Intelligent RAG combining **Liquid + Agentic + Chain** architectures with **unique features**:
 
